@@ -51,12 +51,13 @@ const Result: Component = () => {
               {total().toFixed(1)}
             </p>
           </div>
-          <p class="flex-grow text-sm font-serif">
+          <hr style={{ 'border-top': '3px double' }} />
+          <p class="flex-grow text-sm font-serif text-sm">
             以上是你 {date().getMonth() + 1} 月份的 School Credit 小结
             <br />
             咨询电话：58736110
           </p>
-          <p class="flex-grow font-serif">{getyyyyMMddHHmmss(date())}</p>
+          <p class="flex-grow font-serif text-center text-sm">{getyyyyMMddHHmmss(date())}</p>
         </div>
       </main>
     </>
