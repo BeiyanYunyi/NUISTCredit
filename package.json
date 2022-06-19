@@ -1,0 +1,40 @@
+{
+  "name": "nuist-credit",
+  "version": "1.0.0",
+  "description": "Social credit for NUIST.",
+  "packageManager": "pnpm@7.3.0",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "license": "AGPL-3.0-or-later",
+  "devDependencies": {
+    "@types/babel__core": "^7.1.19",
+    "@types/color-string": "^1.5.2",
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "autoprefixer": "^10.2.6",
+    "color-string": "^1.9.1",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-solid": "^0.7.0",
+    "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.12",
+    "vite-plugin-solid": "^2.2.6",
+    "vite-plugin-windicss": "^1.8.4",
+    "windicss": "^3.5.4"
+  },
+  "dependencies": {
+    "@sicons/ionicons5": "^0.12.0",
+    "solid-app-router": "^0.4.1",
+    "solid-js": "^1.4.4"
+  }
+}
