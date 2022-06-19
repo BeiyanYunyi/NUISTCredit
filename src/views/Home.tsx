@@ -46,7 +46,7 @@ const Home: Component = () => {
                     }}
                   />
                   <input
-                    class="rounded-lg p-2"
+                    class="rounded-lg p-2 flex-shrink min-w-0"
                     type="number"
                     value={result()}
                     onInput={(e) => {
