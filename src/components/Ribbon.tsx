@@ -1,3 +1,4 @@
+/* eslint-disable no-bitwise */
 import { Accessor, Component, createSignal, onMount } from 'solid-js';
 
 interface Point {
@@ -25,6 +26,26 @@ const drawRibbon = (
     return t > wh().height || t < 0 ? line(p) : t;
   };
 
+  const draw = (i: Point, j: Point) => {
+    if (!g2d) return;
+    g2d.beginPath();
+    g2d.moveTo(i.x, i.y);
+    g2d.lineTo(j.x, j.y);
+    const k = j.x + (Math.random() * 2 - 0.25) * config.s;
+    const n = line(j.y);
+    g2d.lineTo(k, n);
+    g2d.closePath();
+    r -= pi / -50;
+    g2d.fillStyle = `#${(
+      ((Math.cos(r) * 127 + 128) << 16) |
+      ((Math.cos(r + pi / 3) * 127 + 128) << 8) |
+      (Math.cos(r + (pi / 3) * 2) * 127 + 128)
+    ).toString(16)}`;
+    g2d.fill();
+    q[0] = q[1];
+    q[1] = { x: k, y: n };
+  };
+
   const reDraw = () => {
     q = [
       { x: 0, y: wh().height * 0.7 + config.s },
@@ -33,27 +54,6 @@ const drawRibbon = (
     while (q[1].x < wh().width + config.s) draw(q[0], q[1]);
   };
 
-  const draw = (i: Point, j: Point) => {
-    if (!g2d) return;
-    g2d.beginPath();
-    g2d.moveTo(i.x, i.y);
-    g2d.lineTo(j.x, j.y);
-    const k = j.x + (Math.random() * 2 - 0.25) * config.s,
-      n = line(j.y);
-    g2d.lineTo(k, n);
-    g2d.closePath();
-    r -= pi / -50;
-    g2d.fillStyle =
-      '#' +
-      (
-        ((Math.cos(r) * 127 + 128) << 16) |
-        ((Math.cos(r + pi / 3) * 127 + 128) << 8) |
-        (Math.cos(r + (pi / 3) * 2) * 127 + 128)
-      ).toString(16);
-    g2d.fill();
-    q[0] = q[1];
-    q[1] = { x: k, y: n };
-  };
   reDraw();
 };
 
